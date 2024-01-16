@@ -1,0 +1,50 @@
+---
+import Hero from "src/components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Features from "src/components/Features.astro";
+import Footer from "../components/Footer.astro";
+
+import BlobRight from "../components/blobs/BlobRight.astro";
+import BlobLeft from "../components/blobs/BlobLeft.astro";
+
+import "../styles/global.css";
+import Frequently from "src/components/Frequently.astro";
+---
+
+<BaseLayout>
+    <Hero />
+    <BlobRight />
+    <Nav />
+    <Features />
+    <BlobLeft />
+    <Frequently />
+    <Footer />
+</BaseLayout>
+
+<script is:inline>
+    const getThemePreference = () => {
+        if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+        ) {
+            return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ?
+                "dark"
+            :   "light";
+    };
+    const isDark = getThemePreference() === "dark";
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+    if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+            const isDark = document.documentElement.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["class"],
+        });
+    }
+</script>

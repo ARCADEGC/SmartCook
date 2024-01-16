@@ -1,0 +1,24 @@
+---
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+type Props = {
+    title: string;
+    desc: string;
+};
+
+const { title, desc } = Astro.props;
+---
+
+<Card>
+    <CardHeader>
+        <div
+            class="aspect-square w-12 rounded-sm bg-primary bg-gradient-to-r from-primary to-secondary-foreground p-3 [&>svg]:h-full [&>svg]:w-full [&>svg]:stroke-primary-foreground"
+        >
+            <slot />
+        </div>
+    </CardHeader>
+    <CardContent>
+        <CardTitle className="text-2xl">{title}</CardTitle>
+        <p class="mt-2">{desc}</p>
+    </CardContent>
+</Card>

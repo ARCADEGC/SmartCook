@@ -1,0 +1,22 @@
+---
+import { ModeToggle } from "@/components/ModeToggle";
+import { Button } from "@/components/ui/button";
+---
+
+<header
+    class="sticky top-0 z-50 grid grid-cols-[inherit] border-b border-b-border backdrop-blur-md [grid-column:_page]"
+>
+    <div class="flex items-end justify-between py-4 [grid-column:_content]">
+        <ModeToggle client:load />
+
+        <nav>
+            <ul class="flex gap-2">
+                <li><Button variant="link">Link1</Button></li>
+                <li><Button variant="link">Link1</Button></li>
+                <li><Button variant="link">Link1</Button></li>
+            </ul>
+        </nav>
+
+        <ModeToggle client:load />
+    </div>
+</header>

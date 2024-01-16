@@ -1,0 +1,124 @@
+---
+import { Button } from "@/components/ui/button";
+
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+---
+
+<footer
+    class="grid grid-cols-[inherit] [grid-column:_page] max-lg:place-items-center"
+>
+    <div
+        class="flex items-end justify-between [grid-column:_content] max-lg:flex-col max-lg:items-center max-lg:text-center"
+    >
+        <h2 class="text-3xl font-black">
+            Ready to get started? <br />
+            <span class="text-primary">Join us today!</span>
+        </h2>
+        <Button className="max-lg:mt-4">Get Started</Button>
+    </div>
+
+    <div
+        class="mt-8 grid gap-8 [grid-column:_content] max-lg:grid-cols-5 max-lg:text-center max-sm:grid-cols-2 lg:grid-cols-[5fr_1fr_1fr_3fr]"
+    >
+        <div
+            class="flex max-w-[80ch] flex-col max-lg:col-span-5 max-sm:col-span-2"
+        >
+            <h3 class="mb-4 text-2xl font-semibold capitalize">Email us</h3>
+            <a href="mailto:"
+                ><Button variant="link" className="px-0">
+                    email.email@email.com
+                </Button></a
+            >
+            <p class="mt-auto text-muted-foreground">
+                Vyšší odborná škola, Střední průmyslová škola a Střední odborná
+                škola, Varnsdorf, příspěvková organizace
+            </p>
+        </div>
+        <div class="grid">
+            <h3 class="mb-4 text-2xl font-semibold capitalize">Links</h3>
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+        </div>
+        <div class="grid">
+            <h3 class="mb-4 text-2xl font-semibold capitalize">Links</h3>
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+            <a href=""
+                ><Button variant="link" className="px-0 capitalize">
+                    link
+                </Button></a
+            >
+        </div>
+        <form
+            class="text-left max-lg:col-span-3 max-sm:col-span-2 max-sm:text-center"
+        >
+            <h3 class="mb-4 text-2xl font-semibold capitalize">Stay tuned</h3>
+            <Label htmlFor="">
+                Stay informed about this product and upcoming news.
+            </Label>
+            <div class="flex gap-2 max-sm:mt-2">
+                <Input
+                    type="email"
+                    name=""
+                    id=""
+                    placeholder="email@gmail.com"
+                    className="backdrop-blur-md"
+                />
+                <Button type="submit" variant="ghost">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-send"
+                        ><path d="m22 2-7 20-4-9-9-4Z"></path><path
+                            d="M22 2 11 13"></path></svg
+                    >
+                </Button>
+            </div>
+        </form>
+    </div>
+
+    <p
+        class="mt-8 py-8 text-center text-muted-foreground [grid-column:_content]"
+    >
+        This website is under the MIT license.
+    </p>
+</footer>

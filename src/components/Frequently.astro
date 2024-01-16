@@ -1,0 +1,30 @@
+---
+import { FrequentlyQuestion } from "./FrequentlyQuestionLeft.tsx";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+---
+
+<div class="my-48 [grid-column:_content]">
+    <h3 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        Frequently asked Questions
+    </h3>
+    <div class="mt-12 flex gap-8 max-md:flex-col">
+        <div class="flex-1">
+            <Card>
+                <CardHeader>
+                    <CardTitle>About Us</CardTitle>
+                </CardHeader>
+                <CardContent><FrequentlyQuestion client:load /></CardContent>
+            </Card>
+        </div>
+
+        <div class="flex-1">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Application</CardTitle>
+                </CardHeader>
+                <CardContent><FrequentlyQuestion client:load /></CardContent>
+            </Card>
+        </div>
+    </div>
+</div>

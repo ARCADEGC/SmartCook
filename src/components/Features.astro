@@ -1,0 +1,60 @@
+---
+import FeaturesCard from "./FeaturesCard.astro";
+import { Vegan, Cat, Beef, CalendarDays, Filter, Camera } from "lucide-react";
+---
+
+<div class="py-16 text-center [grid-column:_content]">
+    <h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        Check our features
+    </h2>
+    <p
+        class="mx-auto max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6"
+    >
+        This is what to expect!
+    </p>
+    <div
+        class="mt-16 grid grid-cols-1 gap-8 text-left sm:grid-cols-2 lg:grid-cols-3"
+    >
+        <FeaturesCard
+            title="We are alergen and vegan friendly!"
+            desc="We care if about our custommer and we try to serve them the best product. That why we include alergens, vegeterian and vegan tag."
+        >
+            <Vegan />
+        </FeaturesCard>
+
+        <FeaturesCard
+            title="We want the whole world to experience!"
+            desc="You, your dearest, us or anyone else. We want everyone to feel comfortable."
+        >
+            <Cat />
+        </FeaturesCard>
+
+        <FeaturesCard
+            title="We have it all!"
+            desc="We serve pasta, salads, meat, vegan. You name it. We have it."
+        >
+            <Beef />
+        </FeaturesCard>
+
+        <FeaturesCard
+            title="Plan to future."
+            desc="With our calendar function, you don't need to keep writing down all your recipes. We plan your food for weeks."
+        >
+            <CalendarDays />
+        </FeaturesCard>
+
+        <FeaturesCard
+            title="Filter by your needs!"
+            desc="If you are alergic or you just don't like something. Cut it out. If you love something. Include it. The choice is yours."
+        >
+            <Filter />
+        </FeaturesCard>
+
+        <FeaturesCard
+            title="Share with your friends!"
+            desc="The more people know about this app, the more recipes there will be to share."
+        >
+            <Camera />
+        </FeaturesCard>
+    </div>
+</div>
