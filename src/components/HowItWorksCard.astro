@@ -1,0 +1,18 @@
+---
+const { color, title, desc, index } = Astro.props;
+---
+
+<div
+    class:list={[
+        "relative max-sm:pl-8 sm:pt-8",
+        "before:absolute before:top-0 before:aspect-square before:h-2 before:w-2 before:rounded-full before:content-[''] max-sm:before:left-0 max-sm:before:top-2",
+        "sm:after:absolute sm:after:left-8 sm:after:right-0 sm:after:top-0.5 sm:after:h-[1px] sm:after:bg-border sm:after:content-[''] ",
+        color,
+    ]}
+>
+    <span class="text-muted-foreground">Step 0{index}</span>
+    <h3 class="mb-2 mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+        {title}
+    </h3>
+    <p>{desc}</p>
+</div>

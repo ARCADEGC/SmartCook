@@ -9,16 +9,18 @@ import BlobRight from "../components/blobs/BlobRight.astro";
 import BlobLeft from "../components/blobs/BlobLeft.astro";
 
 import "../styles/global.css";
-import Frequently from "src/components/Frequently.astro";
+import Frequently from "src/components/FaQ.astro";
+import HowItWorks from "src/components/HowItWorks.astro";
 ---
 
-<BaseLayout>
+<BaseLayout class="overflow-clip">
     <Hero />
     <BlobRight />
     <Nav />
     <Features />
     <BlobLeft />
     <Frequently />
+    <HowItWorks />
     <Footer />
 </BaseLayout>
 

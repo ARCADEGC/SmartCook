@@ -1,5 +1,6 @@
 ---
-import { FrequentlyQuestion } from "./FrequentlyQuestionLeft.tsx";
+import { FaQLeft } from "./FaQLeft.tsx";
+import { FaQRight } from "./FaQRight";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 ---
@@ -14,7 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
                 <CardHeader>
                     <CardTitle>About Us</CardTitle>
                 </CardHeader>
-                <CardContent><FrequentlyQuestion client:load /></CardContent>
+                <CardContent><FaQLeft client:load /></CardContent>
             </Card>
         </div>
 
@@ -23,7 +24,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
                 <CardHeader>
                     <CardTitle>Application</CardTitle>
                 </CardHeader>
-                <CardContent><FrequentlyQuestion client:load /></CardContent>
+                <CardContent><FaQRight client:load /></CardContent>
             </Card>
         </div>
     </div>

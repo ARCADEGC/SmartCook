@@ -1,0 +1,41 @@
+---
+import HowItWorksCard from "./HowItWorksCard.astro";
+---
+
+<div class="my-48 [grid-column:_content]">
+    <h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        How it works
+    </h2>
+    <p
+        class="max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6"
+    >
+        We value simplicity. Lets take a look how you can start using our app
+        yourself in 4 steps.
+    </p>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <HowItWorksCard
+            color="before:bg-red-500"
+            title="This is step title"
+            desc="This is the first step you will need to take to finish this thing."
+            index="1"
+        />
+        <HowItWorksCard
+            color="before:bg-blue-500"
+            title="This is step title"
+            desc="This is the first step you will need to take to finish this thing."
+            index="2"
+        />
+        <HowItWorksCard
+            color="before:bg-yellow-500"
+            title="This is step title"
+            desc="This is the first step you will need to take to finish this thing."
+            index="3"
+        />
+        <HowItWorksCard
+            color="before:bg-green-500"
+            title="This is step title"
+            desc="This is the first step you will need to take to finish this thing."
+            index="4"
+        />
+    </div>
+</div>
