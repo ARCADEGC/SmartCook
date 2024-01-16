@@ -16,14 +16,18 @@ import { ModeToggle } from "@/components/ModeToggle";
         class="relative self-center max-lg:col-span-3 max-lg:justify-self-center"
     >
         <div
-            class="left-0 top-1/2 flex lg:absolute lg:-translate-y-1/2 lg:rotate-180 lg:[writing-mode:_vertical-lr] [&>a:not(:last-child)]:flex [&>a:not(:last-child)]:items-center [&>a:not(:last-child)]:whitespace-nowrap [&>a:not(:last-child)]:after:my-4 [&>a:not(:last-child)]:after:block [&>a:not(:last-child)]:after:aspect-square [&>a:not(:last-child)]:after:h-1.5 [&>a:not(:last-child)]:after:rounded-full [&>a:not(:last-child)]:after:bg-primary [&>a:not(:last-child)]:after:content-['']"
+            class:list={[
+                "[&>a:not(:last-child)]:flex [&>a:not(:last-child)]:h-fit [&>a:not(:last-child)]:items-center [&>a:not(:last-child)]:whitespace-nowrap [&>a:not(:last-child)]:after:my-2 [&>a:not(:last-child)]:after:block [&>a:not(:last-child)]:after:aspect-square [&>a:not(:last-child)]:after:h-1.5 [&>a:not(:last-child)]:after:rounded-full [&>a:not(:last-child)]:after:bg-primary [&>a:not(:last-child)]:after:content-['']",
+                "left-0 top-1/2 flex lg:absolute lg:-translate-y-1/2 lg:rotate-180 lg:[writing-mode:_vertical-lr]",
+                "[&>a>Button]:h-fit",
+            ]}
         >
             <a href=""
                 ><Button
                     variant="link"
                     className="[text-underline-position:_left] hover:underline"
                 >
-                    hello
+                    Contacts
                 </Button></a
             >
             <a href=""
@@ -31,7 +35,7 @@ import { ModeToggle } from "@/components/ModeToggle";
                     variant="link"
                     className="[text-underline-position:_left] hover:underline"
                 >
-                    hello
+                    Features
                 </Button></a
             >
             <a href=""
@@ -39,7 +43,7 @@ import { ModeToggle } from "@/components/ModeToggle";
                     variant="link"
                     className="[text-underline-position:_left] hover:underline"
                 >
-                    hello
+                    FaQ
                 </Button></a
             >
         </div>
@@ -51,18 +55,16 @@ import { ModeToggle } from "@/components/ModeToggle";
             Smartcook
         </h1>
         <h2 class="mb-2 max-w-[80ch] text-xl font-semibold lg:text-3xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A nostrum
-            eius non obcaecati asperiores sequi.
+            Are you ready to taste the world!
         </h2>
         <p class="max-w-[80ch] text-muted-foreground max-lg:text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            architecto accusantium cupiditate impedit commodi odio libero earum,
-            voluptatem omnis ducimus amet labore pariatur quaerat ut, veniam
-            deleniti repudiandae fugit harum!
+            Welcome to our international project that has been created for you.
+            We designed our system thoroughly to deliver the best meals right to
+            you daily. Get immersed into our daily feed.
         </p>
         <div class="mt-4 flex justify-center gap-4">
-            <Button>primary</Button>
-            <Button variant="secondary">secondary</Button>
+            <Button>Get Started</Button>
+            <Button variant="secondary">Ask Us</Button>
         </div>
     </div>
     <div
@@ -72,22 +74,22 @@ import { ModeToggle } from "@/components/ModeToggle";
             variant="link"
             className="right-0 top-1/2 whitespace-nowrap [text-underline-position:_left] hover:underline lg:absolute lg:-translate-y-1/2 lg:rotate-180 lg:[writing-mode:_vertical-lr]"
         >
-            Lets talk
+            Contact Us
         </Button>
     </div>
     <span
         class="max-w-[16ch] self-end text-muted-foreground max-lg:col-span-3 max-lg:justify-self-center max-lg:text-center"
-        >We care about our custommers</span
+        >We care about our customers</span
     >
     <p class="self-end justify-self-center text-center max-lg:col-span-3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae fugit
-        placeat debitis voluptatem voluptatum. Voluptatem.
+        This project has been created in a international project between Poland
+        and Czechia.
     </p>
     <a
         href="#"
         class="self-end justify-self-end max-lg:col-span-3 max-lg:justify-self-center"
         ><Button variant="link" className="text-muted-foreground">
-            #Link
+            #SmartCook
         </Button></a
     >
 </div>

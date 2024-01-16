@@ -7,16 +7,39 @@ import { Button } from "@/components/ui/button";
     class="sticky top-0 z-50 grid grid-cols-[inherit] border-b border-b-border backdrop-blur-md [grid-column:_page]"
 >
     <div class="flex items-end justify-between py-4 [grid-column:_content]">
-        <ModeToggle client:load />
+        <div>
+            <ModeToggle client:load />
+        </div>
 
         <nav>
             <ul class="flex gap-2">
-                <li><Button variant="link">Link1</Button></li>
-                <li><Button variant="link">Link1</Button></li>
-                <li><Button variant="link">Link1</Button></li>
+                <li><Button variant="link">Home</Button></li>
+                <li><Button variant="link">Recipes</Button></li>
+                <li><Button variant="link">Fridge</Button></li>
             </ul>
         </nav>
 
-        <ModeToggle client:load />
+        <div class="flex items-end gap-2">
+            <ModeToggle client:load />
+            <Button variant="outline" size="icon">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-user-round"
+                    ><path d="M18 20a6 6 0 0 0-12 0"></path><circle
+                        cx="12"
+                        cy="10"
+                        r="4"></circle><circle cx="12" cy="12" r="10"
+                    ></circle></svg
+                >
+            </Button>
+        </div>
     </div>
 </header>

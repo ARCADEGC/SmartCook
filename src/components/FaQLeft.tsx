@@ -15,34 +15,38 @@ export function FaQLeft() {
         >
             <AccordionItem value="item-1">
                 <AccordionTrigger className="text-xl">
-                    This is a left question?
+                    Who are you?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    We are students from Czechia and Poland.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
                 <AccordionTrigger className="text-xl">
-                    This is a left question?
+                    How did this project begin?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    Our schools organized this international project to be
+                    possible.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
                 <AccordionTrigger className="text-xl">
-                    This is a left question?
+                    How many people worked on this project?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    There was 1 backend developer which did the recipes API. On
+                    this branch there are 2 full-stack developers and the
+                    community.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
                 <AccordionTrigger className="text-xl">
-                    This is a left question?
+                    What is your goal?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    We want to grow with each project and deliver the best
+                    possible product to you.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

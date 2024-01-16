@@ -15,34 +15,40 @@ export function FaQRight() {
         >
             <AccordionItem value="item-1">
                 <AccordionTrigger className="text-xl">
-                    This is a right question?
+                    What is this about?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    In SmartCook you can prepare you meals days upfront. You can
+                    filter based on what you have at home and much more.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
                 <AccordionTrigger className="text-xl">
-                    This is a right question?
+                    How do I use it?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    Register to our app. Add what you have at home and start
+                    adding recipes.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
                 <AccordionTrigger className="text-xl">
-                    This is a right question?
+                    How do the filters work?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    Simple. We show you collections of what you could have. Say
+                    that you do, don't or never will have. The system will then
+                    automatically sort recipes for you.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
                 <AccordionTrigger className="text-xl">
-                    This is a right question?
+                    I'am allergic. Can I use your app?
                 </AccordionTrigger>
                 <AccordionContent>
-                    Yes. This is a answer to the queston which was asked above.
+                    Although we are not doctors, we have implemented allergens
+                    checks and also for vegans and vegetarians. We recommend
+                    checking every recipe your self.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>
