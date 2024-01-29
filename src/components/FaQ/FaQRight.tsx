@@ -14,7 +14,7 @@ export function FaQRight() {
             defaultValue="item-4"
         >
             <AccordionItem value="item-1">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     What is this about?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -23,7 +23,7 @@ export function FaQRight() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     How do I use it?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -32,7 +32,7 @@ export function FaQRight() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     How do the filters work?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -42,7 +42,7 @@ export function FaQRight() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     I'am allergic. Can I use your app?
                 </AccordionTrigger>
                 <AccordionContent>

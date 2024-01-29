@@ -14,7 +14,7 @@ export function FaQLeft() {
             defaultValue="item-1"
         >
             <AccordionItem value="item-1">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     Who are you?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -22,7 +22,7 @@ export function FaQLeft() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     How did this project begin?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -31,7 +31,7 @@ export function FaQLeft() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     How many people worked on this project?
                 </AccordionTrigger>
                 <AccordionContent>
@@ -41,7 +41,7 @@ export function FaQLeft() {
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-                <AccordionTrigger className="text-xl">
+                <AccordionTrigger className="text-left text-xl">
                     What is your goal?
                 </AccordionTrigger>
                 <AccordionContent>
