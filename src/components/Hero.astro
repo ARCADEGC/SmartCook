@@ -4,7 +4,7 @@ import { ModeToggle } from "@/components/ModeToggle";
 ---
 
 <div
-    class="grid h-[100svh] w-full grid-cols-[var(--grid-sides)_1fr_var(--grid-sides)] gap-2 py-8 [grid-column:_content] lg:p-12 lg:[--grid-sides:_8rem] xl:p-24 xl:[--grid-sides:_12rem]"
+    class="grid h-[100svh] w-full grid-cols-[var(--grid-sides)_1fr_var(--grid-sides)] gap-2 pt-8 [grid-column:_content] max-lg:[grid-template-rows:_repeat(2,_minmax(min-content,_max-content))_1fr_repeat(4,_minmax(min-content,_max-content))] lg:p-12 lg:[--grid-sides:_8rem] xl:p-24 xl:[--grid-sides:_12rem]"
 >
     <span class="font-semibold max-lg:self-end">SmartCook</span>
     <br />
@@ -48,7 +48,9 @@ import { ModeToggle } from "@/components/ModeToggle";
             >
         </div>
     </div>
-    <div class="self-start justify-self-center text-center max-lg:col-span-3">
+    <div
+        class="self-start justify-self-center text-center max-lg:col-span-3 max-lg:my-auto max-lg:pb-8"
+    >
         <h1
             class="mb-4 text-5xl font-bold text-primary md:text-7xl lg:text-9xl"
         >
