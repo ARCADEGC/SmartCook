@@ -9,10 +9,10 @@ type Props = {
 const { title, desc } = Astro.props;
 ---
 
-<Card>
+<Card className="bg-card/75 backdrop-blur-md">
     <CardHeader>
         <div
-            class="aspect-square w-12 rounded-sm bg-primary bg-gradient-to-r from-primary to-secondary-foreground p-3 [&>svg]:h-full [&>svg]:w-full [&>svg]:stroke-primary-foreground"
+            class="aspect-square w-12 rounded-sm bg-primary bg-gradient-to-tl from-primary to-secondary p-3 [&>svg]:h-full [&>svg]:w-full [&>svg]:stroke-primary-foreground"
         >
             <slot />
         </div>

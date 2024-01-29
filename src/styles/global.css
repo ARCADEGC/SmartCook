@@ -4,65 +4,65 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
+        --background: 0 0% 100%; /* body */
+        --foreground: 222.2 84% 4.9%; /* body text */
 
-        --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
+        --card: 0 0% 100%; /* card */
+        --card-foreground: 222.2 84% 4.9%; /* card text */
 
-        --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%; /* dropdown */
+        --popover-foreground: 222.2 84% 4.9%; /* dropdown text */
 
-        --primary: 222.2 47.4% 11.2%;
-        --primary-foreground: 210 40% 98%;
+        --primary: 0 75% 53.5%; /* signature color of e.g. button */
+        --primary-foreground: 210 40% 100%; /* text color of signature e.g. button */
 
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 50 75% 75%; /* secondary color of e.g. button */
+        --secondary-foreground: 30 95% 25%; /* secondary color of e.g. button */
 
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
+        --muted: 210 40% 96%; /* background of e.g. skeleton */
+        --muted-foreground: 215 16% 40%; /* text color of muted text */
 
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
+        --accent: 25 40% 96%; /* background of e.g. dropdown menu item */
+        --accent-foreground: 222.2 47.4% 11.2%; /* text color of e.g. dropdown menu item */
 
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
+        --destructive: 0 95% 40%; /* background of e.g. destructive button */
+        --destructive-foreground: 0 100% 100%; /* text color of e.g. destructive button */
 
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 222.2 84% 4.9%;
+        --border: 23 50% 85%; /* border color */
+        --input: 214 32% 82%; /* input outline color */
+        --ring: 222.2 84% 4.9%; /* ring color */
 
-        --radius: 0.5rem;
+        --radius: 0.5rem; /* border radius size */
     }
 
     .dark {
-        --background: 222.2 84% 4.9%;
-        --foreground: 210 40% 98%;
+        --background: 222.2 84% 4.9%; /* body */
+        --foreground: 210 40% 98%; /* body text */
 
-        --card: 222.2 84% 4.9%;
-        --card-foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%; /* card */
+        --card-foreground: 210 40% 98%; /* card text */
 
-        --popover: 222.2 84% 4.9%;
-        --popover-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%; /* dropdown */
+        --popover-foreground: 210 40% 98%; /* dropdown text */
 
-        --primary: 210 40% 98%;
-        --primary-foreground: 222.2 47.4% 11.2%;
+        --primary: 130 60% 70%; /* signature color of e.g. button */
+        --primary-foreground: 222.2 47.4% 11.2%; /* text color of signature e.g. button */
 
-        --secondary: 217.2 32.6% 17.5%;
-        --secondary-foreground: 210 40% 98%;
+        --secondary: 217.2 32.6% 17.5%; /* secondary color of e.g. button */
+        --secondary-foreground: 175 60% 80%; /* secondary color of e.g. button */
 
-        --muted: 217.2 32.6% 17.5%;
-        --muted-foreground: 215 20.2% 65.1%;
+        --muted: 217.2 32.6% 17.5%; /* background of e.g. skeleton */
+        --muted-foreground: 215 20.2% 65.1%; /* text color of muted text */
 
-        --accent: 217.2 32.6% 17.5%;
-        --accent-foreground: 210 40% 98%;
+        --accent: 217.2 32.6% 17.5%; /* background of e.g. dropdown menu item */
+        --accent-foreground: 210 40% 98%; /* text color of e.g. dropdown menu item */
 
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%; /* background of e.g. destructive button */
+        --destructive-foreground: 210 40% 98%; /* text color of e.g. destructive button */
 
-        --border: 217.2 32.6% 17.5%;
-        --input: 217.2 32.6% 17.5%;
-        --ring: 212.7 26.8% 83.9%;
+        --border: 217.2 32.6% 17.5%; /* border color */
+        --input: 217.2 32.6% 17.5%; /* input outline color */
+        --ring: 212.7 26.8% 83.9%; /* ring color */
     }
 }
 
