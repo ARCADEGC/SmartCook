@@ -70,8 +70,11 @@ export default function ReviewsComponent() {
                 <CarouselNext className="relative right-0 top-0 translate-y-0" />
             </nav>
             <CarouselContent aria-label="Carousel">
-                {PlaceholderReview.reviews.map((content) => (
-                    <CarouselItem className="sm:basis-1/2 lg:basis-1/3">
+                {PlaceholderReview.reviews.map((content, index) => (
+                    <CarouselItem
+                        className="sm:basis-1/2 lg:basis-1/3"
+                        key={index}
+                    >
                         <Card>
                             <CardContent className="mt-6">
                                 <q className="line-clamp-3">{content.review}</q>
