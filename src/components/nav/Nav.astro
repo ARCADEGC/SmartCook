@@ -1,6 +1,8 @@
 ---
 import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
+
+import MobileMenu from "./menu";
 ---
 
 <header
@@ -11,7 +13,7 @@ import { Button } from "@/components/ui/button";
             <ModeToggle client:load />
         </div>
 
-        <nav>
+        <nav class="max-md:hidden">
             <ul class="flex gap-2">
                 <li><Button variant="link">Home</Button></li>
                 <li><Button variant="link">Recipes</Button></li>
@@ -40,6 +42,9 @@ import { Button } from "@/components/ui/button";
                     ></circle></svg
                 >
             </Button>
+            <span class="md:hidden">
+                <MobileMenu client:only="react" />
+            </span>
         </div>
     </div>
 </header>
