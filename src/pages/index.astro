@@ -11,6 +11,7 @@ import BlobLeft from "../components/blobs/BlobLeft.astro";
 import "../styles/global.css";
 import Frequently from "src/components/FaQ/FaQ.astro";
 import HowItWorks from "src/components/HowItWorks.astro";
+import Reviews from "src/components/Reviews.tsx";
 ---
 
 <BaseLayout class="overflow-clip">
@@ -21,6 +22,7 @@ import HowItWorks from "src/components/HowItWorks.astro";
     <BlobLeft />
     <Frequently />
     <HowItWorks />
+    <Reviews client:only="react" />
     <Footer />
 </BaseLayout>
 
