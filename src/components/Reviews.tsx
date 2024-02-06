@@ -27,25 +27,25 @@ const PlaceholderReview = {
         },
         {
             review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptatibus sed necessitatibus in officiis error minus voluptates harum assumenda doloremque temporibus inventore nesciunt quibusdam alias cupiditate! Expedita officiis accusantium illum doloribus enim facere minima animi!",
-            avatarLink: "https://source.unsplash.com/random/300×301",
+            avatarLink: "https://source.unsplash.com/random/301×301",
             UserInitial: "MR",
             UserName: "Martha Rogue",
         },
         {
             review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptatibus sed necessitatibus in officiis error minus voluptates harum assumenda doloremque temporibus inventore nesciunt quibusdam alias cupiditate! Expedita officiis accusantium illum doloribus enim facere minima animi!",
-            avatarLink: "https://source.unsplash.com/random/300×302",
+            avatarLink: "https://source.unsplash.com/random/302×302",
             UserInitial: "OL",
             UserName: "Owen Lack",
         },
         {
             review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptatibus sed necessitatibus in officiis error minus voluptates harum assumenda doloremque temporibus inventore nesciunt quibusdam alias cupiditate! Expedita officiis accusantium illum doloribus enim facere minima animi!",
-            avatarLink: "https://source.unsplash.com/random/300×303",
+            avatarLink: "https://source.unsplash.com/random/303×303",
             UserInitial: "JJ",
             UserName: "John Peter Janson",
         },
         {
             review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, voluptatibus sed necessitatibus in officiis error minus voluptates harum assumenda doloremque temporibus inventore nesciunt quibusdam alias cupiditate! Expedita officiis accusantium illum doloribus enim facere minima animi!",
-            avatarLink: "https://source.unsplash.com/random/300×304",
+            avatarLink: "https://source.unsplash.com/random/304×304",
             UserInitial: "JD",
             UserName: "John Doe",
         },
@@ -85,6 +85,7 @@ export default function ReviewsComponent() {
                                         <AvatarImage
                                             alt="Avatar Image"
                                             src={content.avatarLink}
+                                            className="aspect-square"
                                         />
                                         <AvatarFallback>
                                             {content.UserInitial}
