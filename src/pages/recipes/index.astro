@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/nav/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+import BlobRight from "../../components/blobs/BlobRight.astro";
+
+import "../../styles/global.css";
+
+import Filters from "./Filters.tsx";
+import Recipes from "./Recipes.tsx";
+---
+
+<BaseLayout class="overflow-clip">
+    <BlobRight />
+    <Nav />
+    <div class="mb-48 mt-12 [grid-column:_content]">
+        <Filters client:load />
+        <Recipes client:load />
+    </div>
+    <Footer />
+</BaseLayout>./Fitlers.tsx ./filters.tsx
