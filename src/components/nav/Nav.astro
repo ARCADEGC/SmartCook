@@ -15,8 +15,17 @@ import MobileMenu from "./menu";
 
         <nav class="max-md:hidden">
             <ul class="flex gap-2">
-                <li><Button variant="link">Home</Button></li>
-                <li><Button variant="link">Recipes</Button></li>
+                <li>
+                    <a href="/"
+                        ><Button variant="link" tabIndex={-1}>Home</Button></a>
+                </li>
+                <li>
+                    <a href="/recipes"
+                        ><Button variant="link" tabIndex={-1}>
+                            Recipes
+                        </Button></a
+                    >
+                </li>
                 <li><Button variant="link">Fridge</Button></li>
             </ul>
         </nav>
