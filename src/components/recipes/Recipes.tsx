@@ -15,7 +15,7 @@ export default function Recipes() {
         <>
             <h2 className="mt-16 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
 
-            <div className=" mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {recipes.map((recipe, recipeIndex) => {
                     return (
                         <Card key={recipeIndex} className="flex flex-col pb-6">
@@ -38,8 +38,8 @@ export default function Recipes() {
                                 <CardTitle className="mt-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                                     {recipe.name}
                                 </CardTitle>
-                                <CardDescription>
-                                    <p className="line-clamp-3 text-justify">{recipe.description}</p>
+                                <CardDescription className="line-clamp-3 text-justify">
+                                    {recipe.description}
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="grid gap-1">

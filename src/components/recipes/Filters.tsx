@@ -56,7 +56,7 @@ export default function Filters() {
                         const categoryValues = fitersParams[category as keyof typeof fitersParams];
                         return (
                             <DropdownMenu key={category}>
-                                <DropdownMenuTrigger>
+                                <DropdownMenuTrigger asChild>
                                     <Button variant="outline" tabIndex={-1} className="capitalize tracking-wide">
                                         {category}
                                     </Button>
