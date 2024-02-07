@@ -2,7 +2,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-
 import {
     priceToName,
     difficultyToName,
@@ -11,10 +10,12 @@ import {
 } from "../../pages/recipes/translateObjectToNames";
 import Filters from "./Filters";
 import { Separator } from "@/components/ui/separator";
+import { Suspense } from "react";
+import Loader from "../Loading.tsx";
 
 export default function Recipes() {
     return (
-        <>
+        <Suspense fallback={<Loader />}>
             <h2 className="mt-8 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
 
             <Filters />
@@ -27,35 +28,119 @@ export default function Recipes() {
                             <CardHeader>
                                 <div className="flex flex-wrap gap-2">
                                     {recipe.tolerance.includes(2) && (
-                                        <Badge variant="default" className="w-fit">
+                                        <Badge variant="default" className="w-fit gap-2">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-vegan w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <path d="M2 2a26.6 26.6 0 0 1 10 20c.9-6.82 1.5-9.5 4-14" />
+                                                <path d="M16 8c4 0 6-2 6-6-4 0-6 2-6 6" />
+                                                <path d="M17.41 3.6a10 10 0 1 0 3 3" />
+                                            </svg>
                                             Vegan
                                         </Badge>
                                     )}
                                     {recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
-                                        <Badge variant="secondary" className="w-fit">
+                                        <Badge variant="secondary" className="w-fit gap-2">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-salad w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <path d="M7 21h10" />
+                                                <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
+                                                <path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1" />
+                                                <path d="m13 12 4-4" />
+                                                <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
+                                            </svg>
                                             Vegeterian
                                         </Badge>
                                     )}
                                     {!recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
-                                        <Badge variant="outline" className="w-fit">
+                                        <Badge variant="outline" className="w-fit gap-2">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-beef w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <circle cx="12.5" cy="8.5" r="2.5" />
+                                                <path d="M12.5 2a6.5 6.5 0 0 0-6.22 4.6c-1.1 3.13-.78 3.9-3.18 6.08A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3A6.5 6.5 0 0 0 12.5 2Z" />
+                                                <path d="m18.5 6 2.19 4.5a6.48 6.48 0 0 1 .31 2 6.49 6.49 0 0 1-2.6 5.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5" />
+                                            </svg>
                                             Meat
                                         </Badge>
                                     )}
 
                                     {recipe.price && (
-                                        <Badge variant="outline" className="w-fit capitalize">
+                                        <Badge
+                                            variant="outline"
+                                            className="w-fit gap-2 capitalize text-muted-foreground"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-coins w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <circle cx="8" cy="8" r="6" />
+                                                <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
+                                                <path d="M7 6h1v4" />
+                                                <path d="m16.71 13.88.7.71-2.82 2.82" />
+                                            </svg>
                                             {priceToName(recipe.price)}
                                         </Badge>
                                     )}
 
                                     {recipe.difficulty && (
-                                        <Badge variant="outline" className="w-fit capitalize">
+                                        <Badge
+                                            variant="outline"
+                                            className="w-fit gap-2 capitalize text-muted-foreground"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-construction w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <rect x="2" y="6" width="20" height="8" rx="1" />
+                                                <path d="M17 14v7" />
+                                                <path d="M7 14v7" />
+                                                <path d="M17 3v3" />
+                                                <path d="M7 3v3" />
+                                                <path d="M10 14 2.3 6.3" />
+                                                <path d="m14 6 7.7 7.7" />
+                                                <path d="m8 6 8 8" />
+                                            </svg>
                                             {difficultyToName(recipe.difficulty)}
                                         </Badge>
                                     )}
 
                                     {recipe.country && (
-                                        <Badge variant="outline" className="w-fit uppercase">
+                                        <Badge
+                                            variant="outline"
+                                            className="w-fit gap-2 uppercase text-muted-foreground"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-globe-2 w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
+                                                <path d="M7 3.34V5a3 3 0 0 0 3 3v0a2 2 0 0 1 2 2v0c0 1.1.9 2 2 2v0a2 2 0 0 0 2-2v0c0-1.1.9-2 2-2h3.17" />
+                                                <path d="M11 21.95V18a2 2 0 0 0-2-2v0a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
+                                                <circle cx="12" cy="12" r="10" />
+                                            </svg>
                                             {recipe.country}
                                         </Badge>
                                     )}
@@ -69,7 +154,7 @@ export default function Recipes() {
                             </CardHeader>
                             <CardContent className="grid gap-1">
                                 {recipe.duration && (
-                                    <div className="flex gap-2">
+                                    <div className="flex items-center gap-2">
                                         <small className="flex items-center gap-1 text-sm font-medium leading-none">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +250,7 @@ export default function Recipes() {
                     );
                 })}
             </div>
-        </>
+        </Suspense>
     );
 }
 
