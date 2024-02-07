@@ -29,30 +29,29 @@ export default function Recipes() {
                     return (
                         <Card key={recipe.id} className="flex flex-col pb-6">
                             <CardHeader>
-                                {recipe.tolerance.includes(2) ?
+                                {recipe.tolerance.includes(2) && (
                                     <Badge variant="default" className="w-fit">
                                         Vegan
                                     </Badge>
-                                :   ""}
-                                {(
-                                    recipe.tolerance.includes(1) &&
-                                    !recipe.tolerance.includes(2)
-                                ) ?
-                                    <Badge
-                                        variant="secondary"
-                                        className="w-fit"
-                                    >
-                                        Vegeterian
-                                    </Badge>
-                                :   ""}
-                                {(
-                                    !recipe.tolerance.includes(1) &&
-                                    !recipe.tolerance.includes(2)
-                                ) ?
-                                    <Badge variant="outline" className="w-fit">
-                                        Meat
-                                    </Badge>
-                                :   ""}
+                                )}
+                                {recipe.tolerance.includes(1) &&
+                                    !recipe.tolerance.includes(2) && (
+                                        <Badge
+                                            variant="secondary"
+                                            className="w-fit"
+                                        >
+                                            Vegeterian
+                                        </Badge>
+                                    )}
+                                {!recipe.tolerance.includes(1) &&
+                                    !recipe.tolerance.includes(2) && (
+                                        <Badge
+                                            variant="outline"
+                                            className="w-fit"
+                                        >
+                                            Meat
+                                        </Badge>
+                                    )}
                                 <CardTitle className="mt-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                                     {recipe.name}
                                 </CardTitle>
@@ -63,43 +62,43 @@ export default function Recipes() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="grid gap-1">
-                                {recipe.price ?
+                                {recipe.price && (
                                     <span className="capitalize">
                                         <small className="text-sm font-medium leading-none">
                                             Price:{" "}
                                         </small>
                                         {priceToName(recipe.price)}
                                     </span>
-                                :   ""}
+                                )}
 
-                                {recipe.duration ?
+                                {recipe.duration && (
                                     <span>
                                         <small className="text-sm font-medium leading-none">
                                             Duration:{" "}
                                         </small>
                                         {recipe.duration} minutes
                                     </span>
-                                :   ""}
+                                )}
 
-                                {recipe.difficulty ?
+                                {recipe.difficulty && (
                                     <span className="capitalize">
                                         <small className="text-sm font-medium leading-none">
                                             Difficulty:{" "}
                                         </small>
                                         {difficultyToName(recipe.difficulty)}
                                     </span>
-                                :   ""}
+                                )}
 
-                                {recipe.country ?
+                                {recipe.country && (
                                     <span>
                                         <small className="text-sm font-medium leading-none">
                                             Country:{" "}
                                         </small>
                                         {recipe.country.toUpperCase()}
                                     </span>
-                                :   ""}
+                                )}
 
-                                {recipe.dish_category ?
+                                {recipe.dish_category && (
                                     <span className="capitalize">
                                         <small className="text-sm font-medium">
                                             Category:{" "}
@@ -116,13 +115,11 @@ export default function Recipes() {
                                             )}
                                         </div>
                                     </span>
-                                :   ""}
+                                )}
 
-                                {(
-                                    recipe.tolerance.some((num) =>
-                                        [3, 4, 5, 6, 7, 8, 9].includes(num),
-                                    )
-                                ) ?
+                                {recipe.tolerance.some((num) =>
+                                    [3, 4, 5, 6, 7, 8, 9].includes(num),
+                                ) && (
                                     <span className="flex flex-wrap items-baseline gap-x-2 capitalize">
                                         <small className="text-sm font-medium">
                                             Tolerance:{" "}
@@ -147,7 +144,7 @@ export default function Recipes() {
                                             )}
                                         </div>
                                     </span>
-                                :   ""}
+                                )}
                             </CardContent>
                             <CardFooter className="mt-auto grid pb-0">
                                 <address className="flex items-center gap-4">
@@ -157,11 +154,9 @@ export default function Recipes() {
                                             src=""
                                         />
                                         <AvatarFallback>
-                                            {recipe.author ?
-                                                getUserAvatarInitials(
-                                                    recipe.author,
-                                                )
-                                            :   "A"}
+                                            {getUserAvatarInitials(
+                                                recipe.author,
+                                            )}
                                         </AvatarFallback>
                                     </Avatar>
                                     <span
@@ -186,18 +181,13 @@ export default function Recipes() {
     );
 }
 
-function getUserAvatarInitials(name: string): string {
-    const words = name.trim().split(" ");
-    let initials = "";
+function getUserAvatarInitials(fullName: string): string {
+    if (!fullName || fullName.trim() === "") return "A";
 
-    if (words.length === 1) {
-        return words[0].charAt(0).toUpperCase();
-    }
-
-    initials += words[0].charAt(0).toUpperCase();
-    initials += words[words.length - 1].charAt(0).toUpperCase();
-
-    return initials;
+    const namePart = fullName.split(" ");
+    return namePart.length === 1 ?
+            fullName.charAt(0).toUpperCase()
+        :   `${fullName.charAt(0).toUpperCase()}${namePart[namePart.length - 1].charAt(0).toUpperCase()}`;
 }
 
 const recipes = [
@@ -409,7 +399,7 @@ const recipes = [
                 necessary: "1",
             },
         ],
-        author: "Jaromír Trnka",
+        author: "Jaromír",
     },
     {
         id: "",
