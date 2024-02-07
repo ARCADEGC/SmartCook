@@ -1,19 +1,6 @@
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -59,22 +46,15 @@ export default function ReviewsComponent() {
                 We have tons of positive reviews
             </h2>
             <p className="max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6">
-                See for your self. People love our product because we forward
-                for creating the best product for them.
+                See for your self. People love our product because we forward for creating the best product for them.
             </p>
-            <nav
-                className="mb-4 ml-auto mt-16 flex gap-2"
-                aria-label="Slide controls"
-            >
+            <nav className="mb-4 ml-auto mt-16 flex gap-2" aria-label="Slide controls">
                 <CarouselPrevious className="relative left-0 top-0 translate-y-0" />
                 <CarouselNext className="relative right-0 top-0 translate-y-0" />
             </nav>
             <CarouselContent aria-label="Carousel">
                 {PlaceholderReview.reviews.map((content, index) => (
-                    <CarouselItem
-                        className="sm:basis-1/2 lg:basis-1/3"
-                        key={index}
-                    >
+                    <CarouselItem className="sm:basis-1/2 lg:basis-1/3" key={index}>
                         <Card>
                             <CardContent className="mt-6">
                                 <q className="line-clamp-3">{content.review}</q>
@@ -87,14 +67,9 @@ export default function ReviewsComponent() {
                                             src={content.avatarLink}
                                             className="aspect-square"
                                         />
-                                        <AvatarFallback>
-                                            {content.UserInitial}
-                                        </AvatarFallback>
+                                        <AvatarFallback>{content.UserInitial}</AvatarFallback>
                                     </Avatar>
-                                    <span
-                                        rel="author"
-                                        className="font-semibold"
-                                    >
+                                    <span rel="author" className="font-semibold">
                                         {content.UserName}
                                     </span>
                                 </address>

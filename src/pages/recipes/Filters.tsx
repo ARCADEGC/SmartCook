@@ -7,15 +7,10 @@ import {
     DropdownMenuCheckboxItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+import * as React from "react";
 
 const fitersParams = {
     difficulty: ["easy", "medium", "hard"],
@@ -26,40 +21,68 @@ const fitersParams = {
 };
 
 export default function Filters() {
+    const [filterStates, setFilterStates] = React.useState<{
+        [key: string]: { [key: string]: boolean };
+    }>({
+        difficulty: {},
+        price: {},
+        country: {},
+        category: {},
+        tolerance: {},
+    });
+
+    const handleCheckboxChange = (category: string, key: string, checked: boolean) => {
+        setFilterStates((prevState) => ({
+            ...prevState,
+            [category]: {
+                ...prevState[category],
+                [key]: checked,
+            },
+        }));
+    };
+
     return (
         <Card>
             <CardHeader>
-                <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-                    Filters
-                </h2>
+                <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Filters</h2>
                 <p className="max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6">
                     Filter what you want!
                 </p>
             </CardHeader>
             <Separator />
             <CardContent>
-                <form className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-                    {Object.entries(fitersParams).map(([key, values]) => (
-                        <DropdownMenu>
-                            <DropdownMenuTrigger>
-                                <Button variant="outline" tabIndex={-1}>
-                                    {key}
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent>
-                                <DropdownMenuLabel>
-                                    Set the {key}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                {values.map((value: string | number) => (
-                                    <DropdownMenuCheckboxItem key={value}>
-                                        {value}
-                                    </DropdownMenuCheckboxItem>
-                                ))}
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    ))}
-                </form>
+                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                    {Object.keys(fitersParams).map((category) => {
+                        const categoryValues = fitersParams[category as keyof typeof fitersParams];
+                        return (
+                            <DropdownMenu key={category}>
+                                <DropdownMenuTrigger>
+                                    <Button variant="outline" tabIndex={-1} className="capitalize tracking-wide">
+                                        {category}
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuLabel>Set the {category}</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    {categoryValues.map((value: string | number) => {
+                                        const key = `${category}-${value}`;
+                                        return (
+                                            <DropdownMenuCheckboxItem
+                                                checked={filterStates[category][key]}
+                                                onCheckedChange={(checked) =>
+                                                    handleCheckboxChange(category, key, checked)
+                                                }
+                                                key={key}
+                                            >
+                                                {value}
+                                            </DropdownMenuCheckboxItem>
+                                        );
+                                    })}
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        );
+                    })}
+                </div>
             </CardContent>
         </Card>
     );

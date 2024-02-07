@@ -1,28 +1,14 @@
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
-import {
-    priceToName,
-    difficultyToName,
-    dishCaretogryToName,
-    toleranceCaretogryToName,
-} from "./translateObjectToNames";
+import { priceToName, difficultyToName, dishCaretogryToName, toleranceCaretogryToName } from "./translateObjectToNames";
 
 export default function Recipes() {
     return (
         <>
-            <h2 className="mt-16 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-                Recipes
-            </h2>
+            <h2 className="mt-16 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
 
             <div className=" mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {recipes.map((recipe) => {
@@ -34,114 +20,72 @@ export default function Recipes() {
                                         Vegan
                                     </Badge>
                                 )}
-                                {recipe.tolerance.includes(1) &&
-                                    !recipe.tolerance.includes(2) && (
-                                        <Badge
-                                            variant="secondary"
-                                            className="w-fit"
-                                        >
-                                            Vegeterian
-                                        </Badge>
-                                    )}
-                                {!recipe.tolerance.includes(1) &&
-                                    !recipe.tolerance.includes(2) && (
-                                        <Badge
-                                            variant="outline"
-                                            className="w-fit"
-                                        >
-                                            Meat
-                                        </Badge>
-                                    )}
+                                {recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
+                                    <Badge variant="secondary" className="w-fit">
+                                        Vegeterian
+                                    </Badge>
+                                )}
+                                {!recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
+                                    <Badge variant="outline" className="w-fit">
+                                        Meat
+                                    </Badge>
+                                )}
                                 <CardTitle className="mt-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                                     {recipe.name}
                                 </CardTitle>
                                 <CardDescription>
-                                    <p className="line-clamp-3 text-justify">
-                                        {recipe.description}
-                                    </p>
+                                    <p className="line-clamp-3 text-justify">{recipe.description}</p>
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="grid gap-1">
                                 {recipe.price && (
                                     <span className="capitalize">
-                                        <small className="text-sm font-medium leading-none">
-                                            Price:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium leading-none">Price: </small>
                                         {priceToName(recipe.price)}
                                     </span>
                                 )}
 
                                 {recipe.duration && (
                                     <span>
-                                        <small className="text-sm font-medium leading-none">
-                                            Duration:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium leading-none">Duration: </small>
                                         {recipe.duration} minutes
                                     </span>
                                 )}
 
                                 {recipe.difficulty && (
                                     <span className="capitalize">
-                                        <small className="text-sm font-medium leading-none">
-                                            Difficulty:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium leading-none">Difficulty: </small>
                                         {difficultyToName(recipe.difficulty)}
                                     </span>
                                 )}
 
                                 {recipe.country && (
                                     <span>
-                                        <small className="text-sm font-medium leading-none">
-                                            Country:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium leading-none">Country: </small>
                                         {recipe.country.toUpperCase()}
                                     </span>
                                 )}
 
                                 {recipe.dish_category && (
                                     <span className="capitalize">
-                                        <small className="text-sm font-medium">
-                                            Category:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium">Category: </small>
                                         <div className="flex flex-wrap gap-x-2">
-                                            {recipe.dish_category.map(
-                                                (category) => (
-                                                    <span>
-                                                        {dishCaretogryToName(
-                                                            category,
-                                                        )}
-                                                    </span>
-                                                ),
-                                            )}
+                                            {recipe.dish_category.map((category) => (
+                                                <span>{dishCaretogryToName(category)}</span>
+                                            ))}
                                         </div>
                                     </span>
                                 )}
 
-                                {recipe.tolerance.some((num) =>
-                                    [3, 4, 5, 6, 7, 8, 9].includes(num),
-                                ) && (
+                                {recipe.tolerance.some((num) => [3, 4, 5, 6, 7, 8, 9].includes(num)) && (
                                     <span className="flex flex-wrap items-baseline gap-x-2 capitalize">
-                                        <small className="text-sm font-medium">
-                                            Tolerance:{" "}
-                                        </small>
+                                        <small className="text-sm font-medium">Tolerance: </small>
                                         <div className="flex flex-wrap gap-x-2">
-                                            {recipe.tolerance.map(
-                                                (category) => {
-                                                    if (
-                                                        category === 1 ||
-                                                        category === 2
-                                                    )
-                                                        return;
+                                            {recipe.tolerance.map((category) => {
+                                                if (category === 1 || category === 2) return;
 
-                                                    return (
-                                                        <span>
-                                                            {toleranceCaretogryToName(
-                                                                category,
-                                                            )}
-                                                        </span>
-                                                    );
-                                                },
-                                            )}
+                                                return <span>{toleranceCaretogryToName(category)}</span>;
+                                            })}
                                         </div>
                                     </span>
                                 )}
@@ -149,23 +93,11 @@ export default function Recipes() {
                             <CardFooter className="mt-auto grid pb-0">
                                 <address className="flex items-center gap-4">
                                     <Avatar>
-                                        <AvatarImage
-                                            alt="Avatar Image"
-                                            src=""
-                                        />
-                                        <AvatarFallback>
-                                            {getUserAvatarInitials(
-                                                recipe.author,
-                                            )}
-                                        </AvatarFallback>
+                                        <AvatarImage alt="Avatar Image" src="" />
+                                        <AvatarFallback>{getUserAvatarInitials(recipe.author)}</AvatarFallback>
                                     </Avatar>
-                                    <span
-                                        rel="author"
-                                        className="font-semibold"
-                                    >
-                                        {recipe.author ?
-                                            recipe.author
-                                        :   "Anonymous"}
+                                    <span rel="author" className="font-semibold">
+                                        {recipe.author ? recipe.author : "Anonymous"}
                                     </span>
                                 </address>
 

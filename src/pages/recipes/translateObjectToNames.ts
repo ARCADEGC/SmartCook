@@ -50,9 +50,6 @@ export function toleranceCaretogryToName(categoryNumber: number): string {
     return translateValueToName(categoryNumber, toleranceCategoryMapping);
 }
 
-export function translateValueToName(
-    value: number,
-    mapping: Record<number, string>,
-): string {
+export function translateValueToName(value: number, mapping: Record<number, string>): string {
     return mapping[value] || "undefined";
 }
