@@ -5,9 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 ---
 
-<footer
-    class="grid grid-cols-[inherit] [grid-column:_page] max-lg:place-items-center"
->
+<footer class="grid grid-cols-[inherit] [grid-column:_page] max-lg:place-items-center">
     <div
         class="flex items-end justify-between [grid-column:_content] max-lg:flex-col max-lg:items-center max-lg:text-center"
     >
@@ -21,118 +19,39 @@ import { Input } from "@/components/ui/input";
     <div
         class="mt-8 grid gap-8 [grid-column:_content] max-lg:grid-cols-5 max-lg:text-center max-sm:grid-cols-2 lg:grid-cols-[5fr_2fr_3fr]"
     >
-        <div
-            class="flex max-w-[80ch] flex-col max-lg:col-span-5 max-sm:col-span-2"
-        >
+        <div class="flex max-w-[80ch] flex-col max-lg:col-span-5 max-sm:col-span-2">
             <h3 class="mb-4 text-2xl font-semibold capitalize">Email us</h3>
-            <a href="mailto:"
-                ><Button variant="link" className="px-0">
-                    email.email@email.com
-                </Button></a
-            >
+            <a href="mailto:"><Button variant="link" className="px-0">email.email@email.com</Button></a>
             <p class="mt-auto text-muted-foreground">
-                Vyšší odborná škola, Střední průmyslová škola a Střední odborná
-                škola, Varnsdorf, příspěvková organizace
+                Vyšší odborná škola, Střední průmyslová škola a Střední odborná škola, Varnsdorf, příspěvková organizace
             </p>
         </div>
         <div class="grid max-lg:col-span-2">
             <span class="mb-4 text-2xl font-semibold capitalize">Links</span>
             <div class="grid grid-cols-2">
                 <a href="https://github.com/bubilem/smartcook"
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        SmartCook API
-                    </Button></a
+                    ><Button variant="link" className="px-0 capitalize" tabIndex={-1}>SmartCook API</Button></a
                 >
                 <a href="https://github.com/ARCADEGC/SmartCook"
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        SmartCook GH
-                    </Button></a
+                    ><Button variant="link" className="px-0 capitalize" tabIndex={-1}>SmartCook GH</Button></a
                 >
                 <a href="https://github.com/ARCADEGC"
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        Developer GH
-                    </Button></a
+                    ><Button variant="link" className="px-0 capitalize" tabIndex={-1}>Developer GH</Button></a
                 >
-                <a href=""
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        link
-                    </Button></a
-                >
-                <a href=""
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        link
-                    </Button></a
-                >
-                <a href=""
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        link
-                    </Button></a
-                >
-                <a href=""
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        link
-                    </Button></a
-                >
-                <a href=""
-                    ><Button
-                        variant="link"
-                        className="px-0 capitalize"
-                        tabIndex={-1}
-                    >
-                        link
-                    </Button></a
-                >
+                <a href=""><Button variant="link" className="px-0 capitalize" tabIndex={-1}>link</Button></a>
+                <a href=""><Button variant="link" className="px-0 capitalize" tabIndex={-1}>link</Button></a>
+                <a href=""><Button variant="link" className="px-0 capitalize" tabIndex={-1}>link</Button></a>
+                <a href=""><Button variant="link" className="px-0 capitalize" tabIndex={-1}>link</Button></a>
+                <a href=""><Button variant="link" className="px-0 capitalize" tabIndex={-1}>link</Button></a>
             </div>
         </div>
-        <form
-            class="text-left max-lg:col-span-3 max-sm:col-span-2 max-sm:text-center"
-        >
+        <form class="text-left max-lg:col-span-3 max-sm:col-span-2 max-sm:text-center">
             <h3 class="mb-4 text-2xl font-semibold capitalize">Stay tuned</h3>
-            <Label htmlFor="">
-                Stay informed about this product and upcoming news.
-            </Label>
+            <Label htmlFor="">Stay informed about this product and upcoming news.</Label>
             <form>
                 <div class="flex gap-2 max-sm:mt-2">
-                    <Input
-                        type="email"
-                        name=""
-                        id=""
-                        placeholder="email@gmail.com"
-                        className="backdrop-blur-md"
-                    />
-                    <Button
-                        type="submit"
-                        variant="ghost"
-                        aria-label="Send email"
-                    >
+                    <Input type="email" name="" id="" placeholder="email@gmail.com" className="backdrop-blur-md" />
+                    <Button type="submit" variant="ghost" aria-label="Send email">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -144,8 +63,7 @@ import { Input } from "@/components/ui/input";
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             class="lucide lucide-send"
-                            ><path d="m22 2-7 20-4-9-9-4Z"></path><path
-                                d="M22 2 11 13"></path></svg
+                            ><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg
                         >
                     </Button>
                 </div>
@@ -153,9 +71,7 @@ import { Input } from "@/components/ui/input";
         </form>
     </div>
 
-    <p
-        class="mt-8 py-8 text-center text-muted-foreground [grid-column:_content]"
-    >
+    <p class="mt-8 py-8 text-center text-muted-foreground [grid-column:_content]">
         This website is under the MIT license.
     </p>
 </footer>
