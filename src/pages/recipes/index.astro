@@ -7,15 +7,12 @@ import BlobRight from "../../components/blobs/BlobRight.astro";
 
 import "../../styles/global.css";
 
-import Filters from "../../components/recipes/Filters.tsx";
 import Recipes from "../../components/recipes/Recipes.tsx";
 ---
 
 <BaseLayout class="overflow-clip">
     <BlobRight />
     <Nav />
-    <div class="mb-48 mt-12 [grid-column:_content]">
-        <Recipes client:only="react" />
-    </div>
+    <Recipes client:only="react" />
     <Footer />
 </BaseLayout>
