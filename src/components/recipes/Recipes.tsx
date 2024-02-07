@@ -25,21 +25,41 @@ export default function Recipes() {
                     return (
                         <Card key={recipeIndex} className="flex flex-col pb-6">
                             <CardHeader>
-                                {recipe.tolerance.includes(2) && (
-                                    <Badge variant="default" className="w-fit">
-                                        Vegan
-                                    </Badge>
-                                )}
-                                {recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
-                                    <Badge variant="secondary" className="w-fit">
-                                        Vegeterian
-                                    </Badge>
-                                )}
-                                {!recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
-                                    <Badge variant="outline" className="w-fit">
-                                        Meat
-                                    </Badge>
-                                )}
+                                <div className="flex flex-wrap gap-2">
+                                    {recipe.tolerance.includes(2) && (
+                                        <Badge variant="default" className="w-fit">
+                                            Vegan
+                                        </Badge>
+                                    )}
+                                    {recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
+                                        <Badge variant="secondary" className="w-fit">
+                                            Vegeterian
+                                        </Badge>
+                                    )}
+                                    {!recipe.tolerance.includes(1) && !recipe.tolerance.includes(2) && (
+                                        <Badge variant="outline" className="w-fit">
+                                            Meat
+                                        </Badge>
+                                    )}
+
+                                    {recipe.price && (
+                                        <Badge variant="outline" className="w-fit capitalize">
+                                            {priceToName(recipe.price)}
+                                        </Badge>
+                                    )}
+
+                                    {recipe.difficulty && (
+                                        <Badge variant="outline" className="w-fit capitalize">
+                                            {difficultyToName(recipe.difficulty)}
+                                        </Badge>
+                                    )}
+
+                                    {recipe.country && (
+                                        <Badge variant="outline" className="w-fit uppercase">
+                                            {recipe.country}
+                                        </Badge>
+                                    )}
+                                </div>
                                 <CardTitle className="mt-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                                     {recipe.name}
                                 </CardTitle>
@@ -48,37 +68,41 @@ export default function Recipes() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="grid gap-1">
-                                {recipe.price && (
-                                    <span className="capitalize">
-                                        <small className="text-sm font-medium leading-none">Price: </small>
-                                        {priceToName(recipe.price)}
-                                    </span>
-                                )}
-
                                 {recipe.duration && (
-                                    <span>
-                                        <small className="text-sm font-medium leading-none">Duration: </small>
+                                    <div className="flex gap-2">
+                                        <small className="flex items-center gap-1 text-sm font-medium leading-none">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-clock w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <circle cx="12" cy="12" r="10" />
+                                                <polyline points="12 6 12 12 16 14" />
+                                            </svg>
+                                            Duration:{" "}
+                                        </small>
                                         {recipe.duration} minutes
-                                    </span>
-                                )}
-
-                                {recipe.difficulty && (
-                                    <span className="capitalize">
-                                        <small className="text-sm font-medium leading-none">Difficulty: </small>
-                                        {difficultyToName(recipe.difficulty)}
-                                    </span>
-                                )}
-
-                                {recipe.country && (
-                                    <span>
-                                        <small className="text-sm font-medium leading-none">Country: </small>
-                                        {recipe.country.toUpperCase()}
-                                    </span>
+                                    </div>
                                 )}
 
                                 {recipe.dish_category && (
-                                    <span className="capitalize">
-                                        <small className="text-sm font-medium">Category: </small>
+                                    <span className="flex flex-wrap items-baseline gap-x-2 capitalize ">
+                                        <small className="flex items-center gap-1 text-sm font-medium">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-utensils w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                                                <path d="M7 2v20" />
+                                                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                                            </svg>
+                                            Category:{" "}
+                                        </small>
                                         <div className="flex flex-wrap gap-x-2">
                                             {recipe.dish_category.map((category) => (
                                                 <span key={`${recipeIndex}-${dishCaretogryToName(category)}`}>
@@ -91,7 +115,25 @@ export default function Recipes() {
 
                                 {recipe.tolerance.some((num) => [3, 4, 5, 6, 7, 8, 9].includes(num)) && (
                                     <span className="flex flex-wrap items-baseline gap-x-2 capitalize">
-                                        <small className="text-sm font-medium">Tolerance: </small>
+                                        <small className="flex items-center gap-1 text-sm font-medium">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                strokeLinejoin="round"
+                                                strokeLinecap="round"
+                                                className="lucide lucide-wheat w-4 fill-none stroke-current stroke-2"
+                                            >
+                                                <path d="M2 22 16 8" />
+                                                <path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" />
+                                                <path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" />
+                                                <path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z" />
+                                                <path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z" />
+                                                <path d="M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
+                                                <path d="M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
+                                                <path d="M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z" />
+                                            </svg>
+                                            Tolerance:{" "}
+                                        </small>
                                         <div className="flex flex-wrap gap-x-2">
                                             {Array.from(new Set(recipe.tolerance))
                                                 .filter((category) => category !== 1 && category !== 2)
