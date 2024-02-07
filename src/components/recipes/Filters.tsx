@@ -57,7 +57,7 @@ export default function Filters() {
                         return (
                             <DropdownMenu key={category}>
                                 <DropdownMenuTrigger asChild>
-                                    <Button variant="outline" tabIndex={-1} className="capitalize tracking-wide">
+                                    <Button variant="outline" className="capitalize tracking-wide">
                                         {category}
                                     </Button>
                                 </DropdownMenuTrigger>
