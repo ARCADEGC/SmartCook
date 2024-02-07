@@ -9,11 +9,16 @@ import {
     dishCaretogryToName,
     toleranceCaretogryToName,
 } from "../../pages/recipes/translateObjectToNames";
+import Filters from "./Filters";
+import { Separator } from "@/components/ui/separator";
 
 export default function Recipes() {
     return (
         <>
-            <h2 className="mt-16 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
+            <h2 className="mt-8 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
+
+            <Filters />
+            <Separator />
 
             <div className="mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {recipes.map((recipe, recipeIndex) => {
