@@ -16,9 +16,9 @@ export default function Recipes() {
             <h2 className="mt-16 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Recipes</h2>
 
             <div className=" mt-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                {recipes.map((recipe) => {
+                {recipes.map((recipe, recipeIndex) => {
                     return (
-                        <Card key={recipe.id} className="flex flex-col pb-6">
+                        <Card key={recipeIndex} className="flex flex-col pb-6">
                             <CardHeader>
                                 {recipe.tolerance.includes(2) && (
                                     <Badge variant="default" className="w-fit">
@@ -76,7 +76,9 @@ export default function Recipes() {
                                         <small className="text-sm font-medium">Category: </small>
                                         <div className="flex flex-wrap gap-x-2">
                                             {recipe.dish_category.map((category) => (
-                                                <span>{dishCaretogryToName(category)}</span>
+                                                <span key={`${recipeIndex}-${dishCaretogryToName(category)}`}>
+                                                    {dishCaretogryToName(category)}
+                                                </span>
                                             ))}
                                         </div>
                                     </span>
@@ -86,11 +88,13 @@ export default function Recipes() {
                                     <span className="flex flex-wrap items-baseline gap-x-2 capitalize">
                                         <small className="text-sm font-medium">Tolerance: </small>
                                         <div className="flex flex-wrap gap-x-2">
-                                            {recipe.tolerance.map((category) => {
-                                                if (category === 1 || category === 2) return;
-
-                                                return <span>{toleranceCaretogryToName(category)}</span>;
-                                            })}
+                                            {Array.from(new Set(recipe.tolerance))
+                                                .filter((category) => category !== 1 && category !== 2)
+                                                .map((category) => (
+                                                    <span key={`${recipeIndex}-${toleranceCaretogryToName(category)}`}>
+                                                        {toleranceCaretogryToName(category)}
+                                                    </span>
+                                                ))}
                                         </div>
                                     </span>
                                 )}
