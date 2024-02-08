@@ -3,18 +3,10 @@ import FeaturesCard from "./FeaturesCard.astro";
 import { Vegan, Cat, Beef, CalendarDays, Filter, Camera } from "lucide-react";
 ---
 
-<div class="my-48 scroll-mt-24 [grid-column:_content]" id="featuresSection">
-    <h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Check our features
-    </h2>
-    <p
-        class="max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6"
-    >
-        This is what to expect!
-    </p>
-    <div
-        class="mt-16 grid grid-cols-1 gap-8 text-left sm:grid-cols-2 lg:grid-cols-3"
-    >
+<div class="motion-safe:slide-up my-48 scroll-mt-24 [grid-column:_content]" id="featuresSection">
+    <h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Check our features</h2>
+    <p class="max-w-[100ch] leading-7 text-accent-foreground [&:not(:first-child)]:mt-6">This is what to expect!</p>
+    <div class="mt-16 grid grid-cols-1 gap-8 text-left sm:grid-cols-2 lg:grid-cols-3">
         <FeaturesCard
             title="We are alergen and vegan friendly!"
             desc="We care if about our custommer and we try to serve them the best product. That why we include alergens, vegeterian and vegan tag."
@@ -29,10 +21,7 @@ import { Vegan, Cat, Beef, CalendarDays, Filter, Camera } from "lucide-react";
             <Cat />
         </FeaturesCard>
 
-        <FeaturesCard
-            title="We have it all!"
-            desc="We serve pasta, salads, meat, vegan. You name it. We have it."
-        >
+        <FeaturesCard title="We have it all!" desc="We serve pasta, salads, meat, vegan. You name it. We have it.">
             <Beef />
         </FeaturesCard>
 

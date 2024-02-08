@@ -41,7 +41,7 @@ const PlaceholderReview = {
 
 export default function ReviewsComponent() {
     return (
-        <Carousel className="relative my-48 flex flex-col [grid-column:_content]">
+        <Carousel className="motion-safe:slide-up relative my-48 flex flex-col [grid-column:_content]">
             <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
                 We have tons of positive reviews
             </h2>

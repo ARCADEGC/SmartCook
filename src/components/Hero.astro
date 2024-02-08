@@ -12,9 +12,7 @@ import { ModeToggle } from "@/components/ModeToggle";
         <ModeToggle client:load />
     </div>
 
-    <div
-        class="relative self-center max-lg:col-span-3 max-lg:justify-self-center"
-    >
+    <div class="relative self-center max-lg:col-span-3 max-lg:justify-self-center">
         <div
             class:list={[
                 "[&>a:not(:last-child)]:flex [&>a:not(:last-child)]:h-fit [&>a:not(:last-child)]:items-center [&>a:not(:last-child)]:whitespace-nowrap [&>a:not(:last-child)]:after:my-2 [&>a:not(:last-child)]:after:block [&>a:not(:last-child)]:after:aspect-square [&>a:not(:last-child)]:after:h-1.5 [&>a:not(:last-child)]:after:rounded-full [&>a:not(:last-child)]:after:bg-primary [&>a:not(:last-child)]:after:content-['']",
@@ -23,58 +21,35 @@ import { ModeToggle } from "@/components/ModeToggle";
             ]}
         >
             <a href="" aria-current="page"
-                ><Button
-                    variant="link"
-                    className="[text-underline-position:_left] hover:underline"
-                    tabIndex={-1}
-                >
+                ><Button variant="link" className="[text-underline-position:_left] hover:underline" tabIndex={-1}>
                     Contacts
                 </Button></a
             >
             <a href="#featuresSection" aria-current="page"
-                ><Button
-                    variant="link"
-                    className="[text-underline-position:_left] hover:underline"
-                    tabIndex={-1}
-                >
+                ><Button variant="link" className="[text-underline-position:_left] hover:underline" tabIndex={-1}>
                     Features
                 </Button></a
             >
             <a href="#FaQSection" aria-current="page"
-                ><Button
-                    variant="link"
-                    className="[text-underline-position:_left] hover:underline"
-                    tabIndex={-1}
-                >
+                ><Button variant="link" className="[text-underline-position:_left] hover:underline" tabIndex={-1}>
                     FaQ
                 </Button></a
             >
         </div>
     </div>
-    <div
-        class="self-start justify-self-center text-center max-lg:col-span-3 max-lg:my-auto max-lg:pb-8"
-    >
-        <h1
-            class="mb-4 text-5xl font-bold text-primary md:text-7xl lg:text-9xl"
-        >
-            Smartcook
-        </h1>
-        <h2 class="mb-2 max-w-[80ch] text-xl font-semibold lg:text-3xl">
-            Are you ready to taste the world!
-        </h2>
+    <div class="self-start justify-self-center text-center max-lg:col-span-3 max-lg:my-auto max-lg:pb-8">
+        <h1 class="mb-4 text-5xl font-bold text-primary md:text-7xl lg:text-9xl">Smartcook</h1>
+        <h2 class="mb-2 max-w-[80ch] text-xl font-semibold lg:text-3xl">Are you ready to taste the world!</h2>
         <p class="max-w-[80ch] text-muted-foreground max-lg:text-sm">
-            Welcome to our international project that has been created for you.
-            We designed our system thoroughly to deliver the best meals right to
-            you daily. Get immersed into our daily feed.
+            Welcome to our international project that has been created for you. We designed our system thoroughly to
+            deliver the best meals right to you daily. Get immersed into our daily feed.
         </p>
         <div class="mt-4 flex justify-center gap-4">
             <Button>Get Started</Button>
             <Button variant="secondary">Ask Us</Button>
         </div>
     </div>
-    <div
-        class="relative h-fit self-center justify-self-end max-lg:col-span-3 max-lg:justify-self-center"
-    >
+    <div class="relative h-fit self-center justify-self-end max-lg:col-span-3 max-lg:justify-self-center">
         <Button
             variant="link"
             className="right-0 top-1/2 whitespace-nowrap [text-underline-position:_left] hover:underline lg:absolute lg:-translate-y-1/2 lg:rotate-180 lg:[writing-mode:_vertical-lr]"
@@ -87,14 +62,9 @@ import { ModeToggle } from "@/components/ModeToggle";
         >We care about our customers</span
     >
     <p class="self-end justify-self-center text-center max-lg:col-span-3">
-        This project has been created in a international project between Poland
-        and Czechia.
+        This project has been created in a international project between Poland and Czechia.
     </p>
-    <a
-        href="#"
-        class="self-end justify-self-end max-lg:col-span-3 max-lg:justify-self-center"
-        ><Button variant="link" className="text-muted-foreground" tabIndex={-1}>
-            #SmartCook
-        </Button></a
+    <a href="#" class="self-end justify-self-end max-lg:col-span-3 max-lg:justify-self-center"
+        ><Button variant="link" className="text-muted-foreground" tabIndex={-1}>#SmartCook</Button></a
     >
 </div>
