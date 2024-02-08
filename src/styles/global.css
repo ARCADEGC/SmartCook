@@ -77,3 +77,9 @@
         @apply scroll-smooth;
     }
 }
+
+@layer base {
+    .slide-up {
+        @apply animate-slide-in opacity-0 [animation-range:entry_20svh_60svh] [animation-timeline:view()] lg:scale-90;
+    }
+}
