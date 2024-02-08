@@ -9,12 +9,30 @@ import {
 import { Button } from "@/components/ui/button";
 import * as React from "react";
 
+import { dishCaretogryToName, toleranceCaretogryToName } from "./translateObjectToNames";
+
 const fitersParams = {
     difficulty: ["easy", "medium", "hard"],
     price: ["low", "medium", "high"],
-    country: ["cz", "es", "mx", "au"],
-    category: [1, 2, 3, 4, 5],
-    tolerance: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    country: ["CZ", "ES", "MX", "AU"],
+    category: [
+        dishCaretogryToName(1),
+        dishCaretogryToName(2),
+        dishCaretogryToName(3),
+        dishCaretogryToName(4),
+        dishCaretogryToName(5),
+    ],
+    tolerance: [
+        toleranceCaretogryToName(1),
+        toleranceCaretogryToName(2),
+        toleranceCaretogryToName(3),
+        toleranceCaretogryToName(4),
+        toleranceCaretogryToName(5),
+        toleranceCaretogryToName(6),
+        toleranceCaretogryToName(7),
+        toleranceCaretogryToName(8),
+        toleranceCaretogryToName(9),
+    ],
 };
 
 export default function Filters() {
@@ -59,6 +77,7 @@ export default function Filters() {
                                         checked={filterStates[category][key]}
                                         onCheckedChange={(checked) => handleCheckboxChange(category, key, checked)}
                                         key={key}
+                                        className="capitalize"
                                     >
                                         {value}
                                     </DropdownMenuCheckboxItem>

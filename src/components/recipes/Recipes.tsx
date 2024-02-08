@@ -7,7 +7,7 @@ import {
     difficultyToName,
     dishCaretogryToName,
     toleranceCaretogryToName,
-} from "../../pages/recipes/translateObjectToNames";
+} from "./translateObjectToNames.ts";
 import Filters from "./Filters";
 import { Separator } from "@/components/ui/separator";
 import { Suspense } from "react";
