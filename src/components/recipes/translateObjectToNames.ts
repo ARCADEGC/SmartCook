@@ -30,8 +30,20 @@ const recipeCategoryMapping: Record<number, string> = {
     9: "drink",
 };
 
-export function dishCaretogryToName(categoryNumber: number): string {
+export function recipeCaretogryToName(categoryNumber: number): string {
     return translateValueToName(categoryNumber, recipeCategoryMapping);
+}
+
+const dishCategoryMapping: Record<number, string> = {
+    "1": "breakfast",
+    "2": "soup",
+    "3": "main course",
+    "4": "dessert",
+    "5": "dinner",
+};
+
+export function dishCaretogryToName(categoryNumber: number): string {
+    return translateValueToName(categoryNumber, dishCategoryMapping);
 }
 
 const toleranceCategoryMapping: Record<number, string> = {

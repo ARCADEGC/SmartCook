@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import {
     priceToName,
     difficultyToName,
-    dishCaretogryToName,
+    recipeCaretogryToName,
     toleranceCaretogryToName,
 } from "./translateObjectToNames.ts";
 import Filters from "./Filters";
@@ -191,8 +191,8 @@ export default function Recipes() {
                                             </small>
                                             <div className="flex flex-wrap gap-x-2">
                                                 {recipe.dish_category.map((category) => (
-                                                    <span key={`${recipeIndex}-${dishCaretogryToName(category)}`}>
-                                                        {dishCaretogryToName(category)}
+                                                    <span key={`${recipeIndex}-${recipeCaretogryToName(category)}`}>
+                                                        {recipeCaretogryToName(category)}
                                                     </span>
                                                 ))}
                                             </div>

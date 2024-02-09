@@ -9,19 +9,30 @@ import {
 import { Button } from "@/components/ui/button";
 import * as React from "react";
 
-import { dishCaretogryToName, toleranceCaretogryToName } from "./translateObjectToNames";
+import { recipeCaretogryToName, toleranceCaretogryToName, dishCaretogryToName } from "./translateObjectToNames";
 
 const fitersParams = {
-    difficulty: ["easy", "medium", "hard"],
-    price: ["low", "medium", "high"],
-    country: ["CZ", "ES", "MX", "AU"],
-    category: [
+    author: ["ja", "ty"],
+    dish_category: [
         dishCaretogryToName(1),
         dishCaretogryToName(2),
         dishCaretogryToName(3),
         dishCaretogryToName(4),
         dishCaretogryToName(5),
     ],
+    recipe_category: [
+        recipeCaretogryToName(1),
+        recipeCaretogryToName(2),
+        recipeCaretogryToName(3),
+        recipeCaretogryToName(4),
+        recipeCaretogryToName(5),
+        recipeCaretogryToName(6),
+        recipeCaretogryToName(7),
+        recipeCaretogryToName(8),
+        recipeCaretogryToName(9),
+    ],
+    difficulty: ["easy", "medium", "hard"],
+    price: ["low", "medium", "high"],
     tolerance: [
         toleranceCaretogryToName(1),
         toleranceCaretogryToName(2),
@@ -37,24 +48,35 @@ const fitersParams = {
 
 export default function Filters() {
     const [filterStates, setFilterStates] = React.useState<{
-        [key: string]: { [key: string]: boolean };
+        [key: string]: number[] | string[];
     }>({
-        difficulty: {},
-        price: {},
-        country: {},
-        category: {},
-        tolerance: {},
+        author: [],
+        dish_category: [],
+        recipe_category: [],
+        difficulty: [],
+        price: [],
+        tolerance: [],
     });
 
-    const handleCheckboxChange = (category: string, key: string, checked: boolean) => {
-        setFilterStates((prevState) => ({
-            ...prevState,
-            [category]: {
-                ...prevState[category],
-                [key]: checked,
-            },
-        }));
+    const handleCheckboxChange = (category: string, key: string) => {
+        setFilterStates((prevState) => {
+            const prevCategoryArray = prevState[category] || [];
+            let updatedCategory = [...prevCategoryArray] as string[];
+
+            const index = updatedCategory.indexOf(key);
+
+            index !== -1 ? updatedCategory.splice(index, 1) : updatedCategory.push(key);
+
+            return {
+                ...prevState,
+                [category]: updatedCategory,
+            };
+        });
     };
+
+    React.useEffect(() => {
+        console.log(filterStates);
+    }, [filterStates]);
 
     return (
         <div className="mb-4 mt-6 flex flex-wrap gap-x-4 gap-y-2">
@@ -64,18 +86,27 @@ export default function Filters() {
                     <DropdownMenu key={category}>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="capitalize tracking-wide">
-                                {category}
+                                {category
+                                    .split("")
+                                    .map((char) => (char === "_" ? " " : char))
+                                    .join("")}
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
-                            <DropdownMenuLabel>Set the {category}</DropdownMenuLabel>
+                            <DropdownMenuLabel>
+                                Set the{" "}
+                                {category
+                                    .split("")
+                                    .map((char) => (char === "_" ? " " : char))
+                                    .join("")}
+                            </DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             {categoryValues.map((value: string | number) => {
-                                const key = `${category}-${value}`;
+                                const key: string = `${value}`;
                                 return (
                                     <DropdownMenuCheckboxItem
-                                        checked={filterStates[category][key]}
-                                        onCheckedChange={(checked) => handleCheckboxChange(category, key, checked)}
+                                        checked={(filterStates[category] as string[]).includes(key)}
+                                        onCheckedChange={() => handleCheckboxChange(category, key)}
                                         key={key}
                                         className="capitalize"
                                     >
