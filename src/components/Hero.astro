@@ -1,16 +1,16 @@
 ---
 import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ModeToggle";
 ---
 
 <div
     class="grid h-[100svh] w-full grid-cols-[var(--grid-sides)_1fr_var(--grid-sides)] gap-2 pt-8 [grid-column:_content] max-lg:[grid-template-rows:_repeat(2,_minmax(min-content,_max-content))_1fr_repeat(4,_minmax(min-content,_max-content))] lg:p-12 lg:[--grid-sides:_8rem] xl:p-24 xl:[--grid-sides:_12rem]"
 >
-    <span class="font-semibold max-lg:self-end">SmartCook</span>
+    <span class="self-start font-semibold">SmartCook</span>
     <br />
-    <div class="justify-self-end max-lg:self-end">
-        <ModeToggle client:load />
-    </div>
+
+    <span class="max-w-[16ch] self-start justify-self-end text-right text-muted-foreground max-lg:self-end"
+        >Only the best for everyone</span
+    >
 
     <div class="relative self-center max-lg:col-span-3 max-lg:justify-self-center">
         <div
